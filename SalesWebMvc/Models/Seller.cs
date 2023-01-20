@@ -8,8 +8,12 @@
         public DateTime Date { get; set; }
         public Double BaseSalary { get; set; }
         public Department Department { get; set; }
+        public int DepartmentId { get; set; }
         public ICollection<SalesRecord> SalesRecords { get; set; } = new List<SalesRecord>();
 
+        public Seller()
+        {
+        }
         public Seller(int id, string name, string email, DateTime date, double baseSalary, Department department)
         {
             Id = id;
@@ -18,10 +22,6 @@
             Date = date;
             BaseSalary = baseSalary;
             Department = department;
-        }
-
-        public Seller()
-        {
         }
 
         public void AddSale(SalesRecord sr) 

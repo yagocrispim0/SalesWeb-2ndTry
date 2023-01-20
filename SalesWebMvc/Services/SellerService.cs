@@ -1,4 +1,5 @@
-﻿using SalesWebMvc.Data;
+﻿using Microsoft.CodeAnalysis.Elfie.Serialization;
+using SalesWebMvc.Data;
 using SalesWebMvc.Models;
 
 namespace SalesWebMvc.Services
@@ -14,7 +15,7 @@ namespace SalesWebMvc.Services
 
         public List<Seller> FindAll()
         {
-            return _context.Seller.ToList(); 
+            return _context.Seller.OrderBy(x => x.Name).ToList();
         }
 
         public void Insert(Seller obj)
